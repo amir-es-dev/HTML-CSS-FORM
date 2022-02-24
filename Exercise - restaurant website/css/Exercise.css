@@ -1,0 +1,384 @@
+:root {
+  --color-primary: #ffc600;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 5rem;
+  background: url(../images/topography.svg),
+    linear-gradient(
+      111deg,
+      rgba(249, 61, 102, 1) 0%,
+      rgba(109, 71, 217, 1) 100%
+    );
+  background-attachment: fixed;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 2px rgba(134, 134, 134, 0.1);
+}
+
+/* nav */
+
+.primary--box {
+  background-color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav {
+  margin-bottom: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.collapsible__content {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  animation: flipInX;
+  animation-duration: 1s;
+}
+
+.nav.collapsible--expanded .nav__menu .fa-bars {
+  display: none;
+}
+
+.nav.collapsible--expanded .nav__menu .fa-close {
+  display: revert;
+}
+
+.nav__menu .fa-close {
+  display: none;
+}
+
+.nav__menu {
+  width: 9rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+}
+
+.menu__content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 1rem;
+}
+
+.nav i {
+  margin-right: 0.4rem;
+  padding-top: 0.15rem;
+  font-size: 1.2rem;
+}
+
+.nav p {
+  font-size: 1.4rem;
+}
+
+.menu__item {
+  height: 5rem;
+  min-width: 10rem;
+  flex-grow: 1;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 2rem 5rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.menu__item:hover {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 1000px) {
+  .nav__menu {
+    display: none;
+  }
+
+  .collapsible__content {
+    overflow: visible;
+    margin-bottom: 5rem;
+  }
+}
+
+/* top */
+
+.top {
+  display: grid;
+  grid-template: 40rem 10rem 10rem / 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.top__image {
+  background: url(/images/taco.jpg);
+  height: 400px;
+  background-size: cover;
+  background-position: bottom right;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 5rem;
+}
+.top__title {
+  background-color: var(--color-primary);
+  max-width: 26rem;
+  font-size: 3rem;
+  padding: 0.5rem;
+}
+.top__text {
+  background-color: var(--color-primary);
+  width: 15rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.price {
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.price p:first-of-type {
+  font-size: 6rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.price p:last-of-type {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+@media screen and (min-width: 501px) {
+  .top {
+    grid-template: 40rem 10rem / 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .top__image {
+    grid-column: 1 / 3;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .top {
+    grid-template: 19rem 19rem / 70fr 30fr;
+    gap: 2rem;
+  }
+
+  .top__image {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+}
+
+/* cards */
+
+.cards {
+  display: grid;
+  grid-template: repeat(4, 18rem) / 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.card span {
+  font-size: 5rem;
+}
+
+.card p:first-of-type {
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card p:last-of-type {
+  font-size: 1.5rem;
+  font-weight: bold;
+  /* margin: 0; */
+  opacity: 0.55;
+}
+
+@media screen and (min-width: 537px) {
+  .cards {
+    grid-template: 20rem 20rem / 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 757px) {
+  .cards {
+    grid-template: 20rem 20rem / 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 977px) {
+  .cards {
+    grid-template: 20rem / 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+/* taco */
+
+.taco {
+  background-color: white;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.taco img {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.taco h3 {
+  font-size: 2.4rem;
+  margin: 0;
+}
+
+.taco p {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.taco__text p:last-of-type {
+  margin-bottom: 2.5rem;
+}
+
+.taco span {
+  background-color: var(--color-primary);
+  font-size: 1.5rem;
+  padding: 0.8rem 2rem;
+  white-space: nowrap;
+}
+
+.taco span::after {
+  content: "-->";
+  margin-left: 0.5rem;
+}
+
+@media screen and (min-width: 700px) {
+  .taco {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+/* title */
+
+.title {
+  /* text-align: center; */
+  font-size: 2.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  opacity: 0.7;
+}
+
+.gradient {
+  flex-grow: 1;
+  min-width: 11rem;
+  height: 1rem;
+  display: inline-block;
+  margin: 0 2rem;
+}
+
+.gradient-one {
+  background: linear-gradient(
+    90deg,
+    rgba(249, 61, 102, 0.06206232492997199) 0%,
+    rgb(255, 198, 0) 70%
+  );
+}
+
+.gradient-two {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 198, 0, 1) 30%,
+    rgba(109, 71, 217, 0.06206232492997199) 100%
+  );
+}
+
+/* pictures */
+
+.pictures {
+  display: grid;
+  grid-template: repeat(10, 1fr) / 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.pictures img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 537px) {
+  .pictures {
+    grid-template: repeat(5, 1fr) / 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 757px) {
+  .pictures {
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 977px) {
+  .pictures {
+    grid-template: repeat(4, 1fr) / repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 757px) {
+  .pictures {
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 1197px) {
+  .pictures {
+    grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+    gap: 2rem;
+  }
+}
