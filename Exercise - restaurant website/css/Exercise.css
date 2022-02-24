@@ -126,7 +126,7 @@ body {
   margin-bottom: 2rem;
 }
 .top__image {
-  background: url(/images/taco.jpg);
+  background: url(../images/taco.jpg);
   height: 400px;
   background-size: cover;
   background-position: bottom right;
