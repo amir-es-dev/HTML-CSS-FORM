@@ -1,0 +1,38 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  width: 450px;
+}
+
+.btn {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.greyBtn {
+  background-color: grey;
+}
+.whiteBtn {
+  background-color: white;
+}
+
+.blueBtn {
+  background-color: blue;
+}
+
+.yellowBtn {
+  background-color: yellow;
+}
+
+p {
+  font-weight: bold;
+}
